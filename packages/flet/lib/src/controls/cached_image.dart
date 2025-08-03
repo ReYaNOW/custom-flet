@@ -10,7 +10,7 @@ import 'create_control.dart';
 import 'error.dart';
 import 'flet_store_mixin.dart';
 
-class ImageControl extends StatelessWidget with FletStoreMixin {
+class CachedImageControl extends StatelessWidget with FletStoreMixin {
   final Control? parent;
   final List<Control> children;
   final Control control;
