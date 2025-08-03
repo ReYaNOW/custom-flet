@@ -20,7 +20,7 @@ class ImageControl extends StatelessWidget with FletStoreMixin {
 
   static const String svgTag = " xmlns=\"http://www.w3.org/2000/svg\"";
 
-  const ImageControl(
+  const CachedImageControl(
       {super.key,
       required this.parent,
       required this.children,

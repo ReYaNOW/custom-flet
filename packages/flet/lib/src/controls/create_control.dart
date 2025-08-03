@@ -266,7 +266,7 @@ Widget createWidget(
           parentAdaptive: parentAdaptive,
           backend: backend);
     case "cached_image":
-      return ImageControl(
+      return CachedImageControl(
           key: key,
           parent: parent,
           children: controlView.children,
