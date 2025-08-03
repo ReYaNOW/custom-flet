@@ -217,16 +217,16 @@ for:
       - cd %APPVEYOR_BUILD_FOLDER%
       - dir %flet_sdk_root%\packages\flet-desktop\dist
 
-      # publish
-      - ps: |
-          if (($env:APPVEYOR_REPO_BRANCH -eq "main" -or $env:APPVEYOR_REPO_TAG_NAME) -and (-not $env:APPVEYOR_PULL_REQUEST_NUMBER)) {
-              twine upload $env:flet_sdk_root\packages\flet-desktop\dist\*
-          } elseif (-not $env:APPVEYOR_PULL_REQUEST_NUMBER) {
-            $wheels = (Get-ChildItem $env:flet_sdk_root/packages/flet-desktop/dist/*.whl | Select-Object -ExpandProperty FullName)
-            foreach ($wheel in $wheels) {
-                curl.exe -sF package=@$wheel https://$env:GEMFURY_TOKEN@push.fury.io/flet/
-            }
-          }
+#      # publish
+#      - ps: |
+#          if (($env:APPVEYOR_REPO_BRANCH -eq "main" -or $env:APPVEYOR_REPO_TAG_NAME) -and (-not $env:APPVEYOR_PULL_REQUEST_NUMBER)) {
+#              twine upload $env:flet_sdk_root\packages\flet-desktop\dist\*
+#          } elseif (-not $env:APPVEYOR_PULL_REQUEST_NUMBER) {
+#            $wheels = (Get-ChildItem $env:flet_sdk_root/packages/flet-desktop/dist/*.whl | Select-Object -ExpandProperty FullName)
+#            foreach ($wheel in $wheels) {
+#                curl.exe -sF package=@$wheel https://$env:GEMFURY_TOKEN@push.fury.io/flet/
+#            }
+#          }
 
     test: off
 
@@ -282,7 +282,7 @@ for:
       - popd
 
       # publish
-      - publish_to_pypi packages/flet-desktop/dist/*.whl
+#      - publish_to_pypi packages/flet-desktop/dist/*.whl
 
     artifacts:
       - path: client/flet-macos.tar.gz
@@ -369,7 +369,7 @@ for:
       - popd
 
       # publish
-      - publish_to_pypi packages/flet-desktop/dist/*.whl
+#      - publish_to_pypi packages/flet-desktop/dist/*.whl
 
     artifacts:
       - path: client/flet-linux-*.tar.gz
@@ -416,7 +416,7 @@ for:
       - popd
 
       # publish
-      - publish_to_pypi packages/flet-web/dist/*.whl
+#      - publish_to_pypi packages/flet-web/dist/*.whl
 
     artifacts:
       - path: client/build/flet-web.tar.gz
@@ -481,10 +481,10 @@ for:
       - popd
 
       # publish package
-      - |
-          publish_to_pypi \
-            packages/flet-cli/dist/*.whl \
-            packages/flet/dist/*.whl
+#      - |
+#          publish_to_pypi \
+#            packages/flet-cli/dist/*.whl \
+#            packages/flet/dist/*.whl
 
     artifacts:
       - path: sdk/python/packages/flet-cli/dist/*
