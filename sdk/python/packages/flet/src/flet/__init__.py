@@ -209,6 +209,7 @@ from flet.core.icon import Icon
 from flet.core.icon_button import IconButton
 from flet.core.icons import Icons
 from flet.core.image import Image
+from flet.core.cached_image import CachedImage
 from flet.core.interactive_viewer import (
     InteractiveViewer,
     InteractiveViewerInteractionEndEvent,

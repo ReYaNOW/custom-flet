@@ -72,6 +72,7 @@ import 'haptic_feedback.dart';
 import 'icon.dart';
 import 'icon_button.dart';
 import 'image.dart';
+import 'cached_image.dart';
 import 'interactive_viewer.dart';
 import 'linechart.dart';
 import 'list_tile.dart';
@@ -256,6 +257,15 @@ Widget createWidget(
       return FletAppControl(
           key: key, parent: parent, control: controlView.control);
     case "image":
+      return ImageControl(
+          key: key,
+          parent: parent,
+          children: controlView.children,
+          control: controlView.control,
+          parentDisabled: parentDisabled,
+          parentAdaptive: parentAdaptive,
+          backend: backend);
+    case "cached_image":
       return ImageControl(
           key: key,
           parent: parent,

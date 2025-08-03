@@ -43,6 +43,7 @@ dependencies:
   js: ^0.6.5
   fl_chart: ^0.69.0
   device_info_plus: ^11.2.0
+  cached_network_image: ^3.3.1
 
 dev_dependencies:
   flutter_test:
